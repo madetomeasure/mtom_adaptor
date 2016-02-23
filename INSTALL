@@ -1,0 +1,54 @@
+Prerequisites
+-------------
+
+Guile 2.0.11
+============
+
+On Debian jessie:
+
+  sudo apt-get install guile-2.0 guile-2.0-dev guile-2.0-lib\
+  guile-2.0-doc
+
+  Note that build-essential and other libraries or tools  may be
+necessary to continue this process.  libtool may be especially
+useful for the autoreconf process later down the road.
+
+zeromq 4.1.4 (stable)
+====================
+
+Fetch the POSIX tarball:
+
+  wget http://download.zeromq.org/zeromq-4.1.4.tar.gz
+
+Unpack and install:
+
+  tar xfvz zeromq-4.1.4.tar.gz
+  cd zeromq-4.1.4
+  ./configure make sudo
+  make install
+
+guile-zmq
+=========
+
+Note that the documentation at
+http://zeromq.org/bindings:guile-binding#toc0 is outdated.
+
+Fetch guile-zmq:
+
+  git clone http://wingolog.org/git/guile-zmq.git
+
+Generate the configure script and install:
+
+  cd guile-zmq
+  autoreconf -vif
+  ./configure
+  make
+  sudo make install
+
+You may need to supply a --prefix option for the configure
+script.
+
+Postfix
+=======
+
+Here be dragons.
